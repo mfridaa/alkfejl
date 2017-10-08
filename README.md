@@ -17,10 +17,17 @@ FUNKCIÓK ÉS FELHASZNÁLÓI JOGOSULTSÁGOK:
 Felhasználók szempontjából megkülönböztetünk nem bejelentkezett felhasználókat, valamint adminokat és usereket. 
 
 •	Kezdő felület (Login felület, Regisztrációs lehetőség, Termékek megtekintésének lehetősége) - Nem bejelentkezett felhasználók
+
 •	Regisztrációs felület - Nem bejelentkezett felhasználók
+
 •	Termékek megtekintése kategóriánként - Nem bejelentkezett felhasználók, Bejelentkezett felhasználók (USER)
+
 •	Keresés a termékek között - Nem bejelentkezett felhasználók, Bejelentkezett felhasználók (USER)
+
 •	Adott termék adatainak megtekintése - Nem bejelentkezett felhasználók, Bejelentkezett felhasználók (USER)
+
 •	Termék kosárba helyezése - Bejelentkezett felhasználók (USER)
+
 •	Kosár tartalmának módosítása, megvásárlása - Bejelentkezett felhasználók (USER)
+
 •	Új termékek hozzáadása, meglévők eltávolítása - Bejelentkezett felhasználók (ADMIN)
