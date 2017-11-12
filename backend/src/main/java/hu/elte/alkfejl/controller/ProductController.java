@@ -40,12 +40,6 @@ public class ProductController {
         return ResponseEntity.ok(p);
     }
     
-    @GetMapping("/productById")
-    public ResponseEntity<Product > productById(Long id){
-        Optional<Product> p = productRepository.findById(id);
-        return ResponseEntity.ok(p.get());
-    }
-    
     @GetMapping("/productByName")
     public ResponseEntity<List<Product> > productByName(String name){
         List<Product> p = productRepository.findAllByName(name);

@@ -22,9 +22,9 @@ public class UserController {
     @Autowired
     private Session session;
     @GetMapping("/users")
-    public ResponseEntity<User> get(){
-        User u = userRepository.findById(new Long(0));
-        System.out.println(u.getUsername());
+    @Role({User.Role.ADMIN})
+    public ResponseEntity<Iterable<User> > get(){
+        Iterable<User> u = userRepository.findAll();
         return ResponseEntity.ok(u);
     }
 

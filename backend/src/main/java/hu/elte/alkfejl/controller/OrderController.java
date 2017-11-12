@@ -33,10 +33,9 @@ public class OrderController {
     private OrderRepository orderRepository;
     
     @GetMapping("/orders")
-    public ResponseEntity<Orders> get(){
-        Optional<Orders> o = orderRepository.findById(new Long(0));
-        System.out.println(o.get().getAmount());
-        return ResponseEntity.ok(o.get());
+    public ResponseEntity<Iterable<Orders> > get(){
+        Iterable<Orders> o = orderRepository.findAll();
+        return ResponseEntity.ok(o);
     }
     
     @PostMapping("/addOrder")
