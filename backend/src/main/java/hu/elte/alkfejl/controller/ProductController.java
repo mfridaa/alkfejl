@@ -10,6 +10,7 @@ import hu.elte.alkfejl.entity.Orders;
 import hu.elte.alkfejl.entity.Product;
 import hu.elte.alkfejl.entity.User;
 import hu.elte.alkfejl.repository.ProductRepository;
+import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -43,6 +44,12 @@ public class ProductController {
     public ResponseEntity<Product > productById(Long id){
         Optional<Product> p = productRepository.findById(id);
         return ResponseEntity.ok(p.get());
+    }
+    
+    @GetMapping("/productByName")
+    public ResponseEntity<List<Product> > productByName(String name){
+        List<Product> p = productRepository.findAllByName(name);
+        return ResponseEntity.ok(p);
     }
     
     @PostMapping("/addProduct")
