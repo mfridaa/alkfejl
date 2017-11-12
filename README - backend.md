@@ -1,23 +1,23 @@
-#Alkalmazások fejlesztése
+# Alkalmazások fejlesztése
 
-##Backend megvalósítsa - dokumentáció
+## Backend megvalósítsa - dokumentáció
 
-###Fejlesztői környezet bemutatása
+### Fejlesztői környezet bemutatása
 
 Az alkalmazás egy Java nyelven, Spring Boot (1.5.8) keretrendszerben íródott, MVC architektúrájú Maven projekt. A program által használt dependenciák, többek között JPA, H2 (adatbázis), Devtools, Lombok, Thymeleaf.
 
-####Táblák adatkapcsolati diagrammgja
+#### Táblák adatkapcsolati diagrammgja
 
 Az uml a következő linken érhető el:
 https://github.com/mfridaa/alkfejl/blob/master/database.png
 
-####Alkalmazott könyvtárstruktúra
+#### Alkalmazott könyvtárstruktúra
 
 Az MVC architektúra logikája alapján épül fel az alkalmazás könyvtárstruktúrája. A projekt az osztályok funkciójának megfelelően  package-ekre  van osztva, a következő féle képpen:
 
-#####Source packages:
-*Főkönyvtár: hu.elte.alkfejl (ez tartalmazza a main class-t, azaz AlkfejlApplication.java)
-*Controllerek: hu.elte.alkfejl.controller
+##### Source packages:
+- Főkönyvtár: hu.elte.alkfejl (ez tartalmazza a main class-t, azaz AlkfejlApplication.java)
+ Controllerek: hu.elte.alkfejl.controller
 *Repository-k: hu.elte.alkfejl.repository
 *Entity-k: elte.alkfejl.entity
 *Saját annotációk implementációja: elte.alkfejl.annotation
