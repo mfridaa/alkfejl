@@ -15,7 +15,7 @@ https://github.com/mfridaa/alkfejl/blob/master/database.png
 
 Az MVC architektúra logikája alapján épül fel az alkalmazás könyvtárstruktúrája. A projekt az osztályok funkciójának megfelelően  package-ekre  van osztva, a következő féle képpen:
 
-##### Source packages:
+#### Source packages:
 - ```Főkönyvtár:``` hu.elte.alkfejl (ez tartalmazza a main class-t, azaz AlkfejlApplication.java)
 - ```Controllerek:``` hu.elte.alkfejl.controller
 - ```Repository-k:``` hu.elte.alkfejl.repository
