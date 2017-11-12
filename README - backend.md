@@ -23,3 +23,19 @@
 </li>
 </ul>
 <p><br /> </p>
+
+<p><strong><u>Végpontok</u></strong></p>
+<ul>
+<li style="margin-left: 54.0pt; text-indent: -18.0pt;">orders/orders: rendelések listázása, bárki számára elérhető</li>
+<li style="margin-left: 54.0pt; text-indent: -18.0pt;">orders/addOrder: rendelés felvétele, user vagy admin jogosultsággal</li>
+<li style="margin-left: 54.0pt; text-indent: -18.0pt;">orders/deleteOrder: rendelés törlése, user vagy admin jogosultsággal</li>
+<li style="margin-left: 54.0pt; text-indent: -18.0pt;">orders/updateOrder: rendelés módosítása, user vagy admin jogosultsággal</li>
+<li style="margin-left: 54.0pt; text-indent: -18.0pt;">product/allProducts: összes termék listázása, bárki számára elérhető</li>
+<li style="margin-left: 54.0pt; text-indent: -18.0pt;">product/productByName: termékek név szerinti listázása, bárki számára elérhető</li>
+<li style="margin-left: 54.0pt; text-indent: -18.0pt;">product/addProduct: termék felvétele, admin jogosultsággal</li>
+<li style="margin-left: 54.0pt; text-indent: -18.0pt;">product/delteProduct: termék törlése, admin jogosultsággal</li>
+<li style="margin-left: 54.0pt; text-indent: -18.0pt;">product/updateProduct: termék módosítása, admin jogosultsággal</li>
+<li style="margin-left: 54.0pt; text-indent: -18.0pt;">users/users: felhasználók listázása, admin jogosultsággal</li>
+<li style="margin-left: 54.0pt; text-indent: -18.0pt;">users/registration: regisztráció, bárki számára elérhető</li>
+<li style="margin-left: 54.0pt; text-indent: -18.0pt;">users/login: bejelentkezés, bárki számára elérhető</li>
+</ul>
