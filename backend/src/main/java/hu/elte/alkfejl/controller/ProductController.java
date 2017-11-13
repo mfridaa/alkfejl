@@ -13,6 +13,7 @@ import hu.elte.alkfejl.repository.ProductRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -46,6 +47,12 @@ public class ProductController {
         return ResponseEntity.ok(p);
     }
     
+    @GetMapping("/productByCategory")
+    public ResponseEntity<List<Product> > productByCategory(Long id){
+        List<Product> p = productRepository.selectProducts(id);
+        return ResponseEntity.ok(p);
+    }
+
     @PostMapping("/addProduct")
     @Role({User.Role.ADMIN})
     public ResponseEntity addOrder(@RequestBody Product product){

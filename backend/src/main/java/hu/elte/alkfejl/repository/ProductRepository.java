@@ -13,5 +13,8 @@ import java.util.Optional;
 public interface ProductRepository extends CrudRepository<Product, Long> {
     Optional<Product> findById(Long id);
     List<Product> findAllByName(String name);
+    
+    @Query("SELECT p FROM Product p JOIN p.categories cp WHERE cp.id = ?1")
+    List<Product> selectProducts(Long id);
 }
 

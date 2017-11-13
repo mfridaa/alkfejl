@@ -7,6 +7,7 @@ package hu.elte.alkfejl.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,6 +17,7 @@ import lombok.NoArgsConstructor;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
@@ -40,7 +42,11 @@ public class Product extends BaseEntity {
     @JsonIgnore
     private Orders order;
     
-    @ManyToMany(mappedBy = "products")
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JsonIgnore
-    private List<Category> categories;
+    @JoinTable(name = "CATEGORY_PRODUCT",
+        joinColumns = @JoinColumn(name = "products_id"),
+        inverseJoinColumns = @JoinColumn(name = "categories_id")
+    )
+    private Set<Category> categories;
 }

@@ -7,6 +7,7 @@ package hu.elte.alkfejl.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import java.util.List;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -37,9 +38,7 @@ public class Category extends BaseEntity{
         ART, HOME, TECH, WOMEN, MEN
     }
     
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable
+    @ManyToMany(mappedBy = "categories")
     @JsonIgnore
-    private List<Product> products;
-    
+    private Set<Product> products;
 }
