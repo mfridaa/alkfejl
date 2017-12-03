@@ -3,7 +3,7 @@
       <h3 class="red-text text-lighten-2">Belejentkezés</h3>
       <div class="row">
         <div class="input-field col s12">
-          <input #email type="email" [ngClass]="error ? 'error' : ''" placeholder="E-mail cím">
+          <input #username type="username" [ngClass]="error ? 'error' : ''" placeholder="Felhasználó név">
         </div>
       </div>
       <div class="row">
@@ -14,7 +14,7 @@
       <div class="row">
         <div class="col s12">
           <input type="button" value="Bejelentkezés" class="btn"
-                 (click)="tryLogin(email.value, password.value)">
+                 (click)="tryLogin(username.value, password.value)">
         </div>
       </div>
     </form>
