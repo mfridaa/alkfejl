@@ -1,0 +1,7 @@
+<h2 class="red-text text-lighten-2">Product List</h2>
+<div class="collection">
+  <app-product *ngFor="let product of product"
+            [product]="product"
+            (delProduct)="delProduct($event)">
+  </app-product>
+</div>
