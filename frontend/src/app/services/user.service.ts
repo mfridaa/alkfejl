@@ -25,6 +25,6 @@ export class UserService {
   }
 
   public getOrdersByUser(user: User): Observable<Orders[]> {
-    return this.http.get('http://localhost:4200/api/todos/user/' + user.id) as Observable<Orders[]>;
+    return this.http.get('http://localhost:4200/api/orders/user/' + user.id) as Observable<Orders[]>;
   }
 }

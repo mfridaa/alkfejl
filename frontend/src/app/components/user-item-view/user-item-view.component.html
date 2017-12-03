@@ -15,8 +15,8 @@
   </table>
   <h3>Feldatok</h3>
   <ul class="collection">
-    <app-todo *ngFor="let todo of user.todos" [todo]="todo"
-              (delTodo)="delTodo($event)"></app-todo>
+    <app-orders *ngFor="let order of user.orders" [order]="order"
+              (delOrders)="delOrders($event)"></app-orders>
   </ul>
 </div>
 <div *ngIf="!user">

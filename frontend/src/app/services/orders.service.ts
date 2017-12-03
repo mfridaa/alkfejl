@@ -5,7 +5,7 @@ import { Orders } from '../classes/orders';
 
 @Injectable()
 export class OrdersService {
-  private static api: string = 'http://localhost:4200/api/Orderss';
+  private static api: string = 'http://localhost:4200/api/Orders';
 
   constructor(
     private http: HttpClient

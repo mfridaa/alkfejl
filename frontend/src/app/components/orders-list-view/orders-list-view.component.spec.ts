@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TodoListViewComponent } from './todo-list-view.component';
+import { OrdersListViewComponent } from './Orders-list-view.component';
 
-describe('TodoListViewComponent', () => {
-  let component: TodoListViewComponent;
-  let fixture: ComponentFixture<TodoListViewComponent>;
+describe('OrdersListViewComponent', () => {
+  let component: OrdersListViewComponent;
+  let fixture: ComponentFixture<OrdersListViewComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TodoListViewComponent ]
+      declarations: [ OrdersListViewComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TodoListViewComponent);
+    fixture = TestBed.createComponent(OrdersListViewComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,7 +1,7 @@
-<h2 class="red-text text-lighten-2">Todo List</h2>
+<h2 class="red-text text-lighten-2">Order List</h2>
 <div class="collection">
-  <app-todo *ngFor="let todo of todos"
-            [todo]="todo"
-            (delTodo)="delTodo($event)">
-  </app-todo>
+  <app-orders *ngFor="let order of orders"
+            [order]="order"
+            (delOrders)="delOrders($event)">
+  </app-orders>
 </div>
