@@ -1,0 +1,19 @@
+<a class="btn-flat right" routerLink="/">Vissza a lista nézetbe</a>
+<div *ngIf="product">
+    <h2 class="red-text text-lighten-2">Termék №{{product.id}}</h2>
+    <p><strong>Név: </strong> {{product.name}}</p>
+    <p><strong>Ár: </strong> {{product.price}}</p>
+</div>
+<div *ngIf="!product">
+    <div class="preloader-wrapper active">
+    <div class="spinner-layer spinner-red-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
+</div>

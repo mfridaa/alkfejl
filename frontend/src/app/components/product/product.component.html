@@ -1,0 +1,8 @@
+<a routerLink="/product/{{product.id}}" class="collection-item">
+  <span *ngIf="authService.hasRole('ADMIN')"
+        class="right delete" (click)="clickButton($event)">
+    <i class="material-icons red-text">delete</i>
+  </span>
+  <span class="new badge" data-badge-caption="">{{product.name}}</span>
+  {{product.name}}
+</a>

@@ -19,6 +19,10 @@ export class Product {
         return this._name;
     }
 
+    public get id(): number {
+        return this._id;
+    }
+
     public get price(): number {
         return this._price;
     }
