@@ -1,6 +1,7 @@
 package hu.elte.alkfejl.repository;
 
 import hu.elte.alkfejl.entity.Orders;
+import hu.elte.alkfejl.entity.User;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
@@ -18,4 +19,6 @@ public interface OrderRepository extends CrudRepository<Orders, Long> {
     
     List<Orders> findAllByStatus(Boolean status);
     List<Orders> findAllByOrderDate(Date orderDate);
+    
+    public Iterable<Orders> findAllByUser(User user);
 }

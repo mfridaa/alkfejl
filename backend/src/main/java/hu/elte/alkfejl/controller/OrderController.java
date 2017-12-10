@@ -9,6 +9,7 @@ import hu.elte.alkfejl.annotation.Role;
 import hu.elte.alkfejl.entity.Orders;
 import hu.elte.alkfejl.entity.User;
 import hu.elte.alkfejl.repository.OrderRepository;
+import hu.elte.alkfejl.repository.UserRepository;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,6 +19,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -27,15 +29,23 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author Blanka Orosz
  */
 @Controller
-@RequestMapping("/orders")
+@RequestMapping("/api/orders")
 public class OrderController {
+    @Autowired
+    private UserRepository userRepository;
     @Autowired
     private OrderRepository orderRepository;
     
-    @GetMapping("/orders")
+    @GetMapping("")
     public ResponseEntity<Iterable<Orders> > get(){
         Iterable<Orders> o = orderRepository.findAll();
         return ResponseEntity.ok(o);
+    }
+    
+    @GetMapping("/{id}")
+    public ResponseEntity<Orders> getOne(@PathVariable Long id) {
+        Orders order = orderRepository.findOne(id);
+        return ResponseEntity.ok(order);
     }
     
     @PostMapping("/addOrder")
@@ -69,5 +79,12 @@ public class OrderController {
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok().build();
+    }
+    
+    @GetMapping("/user/{userId}")
+    public ResponseEntity<Iterable<Orders>> getAllByUserId(@PathVariable Long userId) {
+        User user = userRepository.findOne(userId);
+        Iterable<Orders> orders = orderRepository.findAllByUser(user);
+        return ResponseEntity.ok(orders);
     }
 }

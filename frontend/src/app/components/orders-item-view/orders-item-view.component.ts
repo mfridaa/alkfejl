@@ -21,7 +21,7 @@ export class OrdersItemViewComponent implements OnInit {
   ngOnInit() {
     let id: number = parseInt(this.route.snapshot.paramMap.get('id'));
     this.ordersService.getOrder(id).subscribe((order) => {
-      this.order = order as Orders
+      this.order = order as Orders;
     });
   }
 

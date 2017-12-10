@@ -1,12 +1,24 @@
-<a class="btn-flat right" routerLink="/">Vissza a lista nézetbe</a>
+<a class="btn-flat right" routerLink="/orders">Vissza a lista nézetbe</a>
 <div *ngIf="orders">
-    <h2 class="red-text text-lighten-2">Rendelés №{{orders.id}}</h2>
-    <p><strong>Mennyiség: </strong> {{orders.amount}}</p>
-    <p><strong>Dátum:</strong> {{orders.date}}</p>
-    <p><strong>Státusz:</strong> {{orders.status}}</p>
+  <table>
+    <tbody>
+      <tr>
+        <th>Menyniség</th>
+        <td>{{orders.amount}}</td>
+      </tr>
+      <tr>
+        <th>Dátum</th>
+        <td>{{orders.date}}</td>
+      </tr>
+      <tr>
+        <th>Státusz</th>
+        <td>{{orders.status}}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 <div *ngIf="!orders">
-    <div class="preloader-wrapper active">
+  <div class="preloader-wrapper active">
     <div class="spinner-layer spinner-red-only">
       <div class="circle-clipper left">
         <div class="circle"></div>

@@ -10,7 +10,7 @@ import { LoginViewComponent } from '../../components/login-view/login-view.compo
 import { RegistViewComponent } from '../../components/regist-view/regist-view.component';
 
 const routes: Routes = [
-  { path: '', component: OrdersListViewComponent },
+  { path: 'orders', component: OrdersListViewComponent },
   { path: 'products', component: ProductListViewComponent },
   { path: 'orders/:id', component: OrdersItemViewComponent },
   { path: 'product/:id', component: ProductItemViewComponent },

@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author Blanka Orosz
  */
 @Controller
-@RequestMapping("/product")
+@RequestMapping("/api/product")
 public class ProductController {
     @Autowired
     private ProductRepository productRepository;

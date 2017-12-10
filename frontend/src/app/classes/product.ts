@@ -9,10 +9,10 @@ export class Product {
     public _categories: Category[]
 
     public constructor(id: number, name: string, price: number, categories: Category[]) {
-        this._id = id;
-        this._name = name;
-        this._price = price;
-        this._categories = categories;
+        this._id = id,
+        this._name = name,
+        this._price = price,
+        this._categories = categories
     }
 
     public get name(): string {

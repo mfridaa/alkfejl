@@ -1,7 +1,30 @@
-<h2 class="red-text text-lighten-2">Order List</h2>
-<div class="collection">
-  <app-orders *ngFor="let order of orders"
-            [order]="order"
-            (delOrders)="delOrders($event)">
-  </app-orders>
+<div *ngIf="orders">
+  <h2 class="red-text text-lighten-2">Order List</h2>
+  <table class="striped highlight">
+    <thead>
+      <th>Mennyiség</th>
+      <th>Dátum</th>
+      <th>Állapot</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let order of orders">
+      <th>{{order.amount}}</th>
+      <th><a routerLink="/user/{{order.id}}">{{order.date}}</a></th>
+      <td>{{order.status}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="!orders">
+    <div class="preloader-wrapper active">
+    <div class="spinner-layer spinner-red-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
 </div>

@@ -2,23 +2,39 @@ import { User } from './user';
 import { Product } from './product';
 
 export class Orders {
-    private _id : number;
+    /*private _id : number;
     private _amount: number;
     private _Orderdate: Date;
-    private _status: boolean;
-    private _user: User;
-    private _product: Product;
+    private _status: boolean;*/
+    public _user: User;
+    public _product: Product;
 
-    public constructor(id: number, amount: number, date: Date, status: boolean, user: User, product: Product) {
-        this._id = id;
-        this._amount = amount;
-        this._Orderdate = date;
-        this._product = product;
-        this._status = status;
-        this._user = user
+    public constructor(
+        public id: number, 
+        public amount: number, 
+        public date: Date, 
+        public status: boolean,
+        public userid: number,
+        public productid: number) 
+    {}
+
+    public get user() {
+        return this._user;
     }
 
-    public get id(): number {
+    public set user(user: User) {
+        this._user = user;
+    }
+
+    public get product() {
+        return this._product;
+    }
+
+    public set product(product: Product) {
+        this._product = product;
+    }
+
+   /* public get id(): number {
         return this._id;
     }
 
@@ -63,5 +79,5 @@ export class Orders {
 
     public set product(product: Product){
         this._product = product;
-    }
+    }*/
 }
