@@ -13,6 +13,7 @@ import { OrdersItemViewComponent } from './components/orders-item-view/orders-it
 import { UserListViewComponent } from './components/user-list-view/user-list-view.component';
 import { UserItemViewComponent } from './components/user-item-view/user-item-view.component';
 import { LoginViewComponent } from './components/login-view/login-view.component';
+import { RegistViewComponent } from './components/regist-view/regist-view.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { LoginViewComponent } from './components/login-view/login-view.component
     OrdersItemViewComponent,
     UserListViewComponent,
     UserItemViewComponent,
-    LoginViewComponent
+    LoginViewComponent,
+    RegistViewComponent
   ],
   imports: [
     BrowserModule,

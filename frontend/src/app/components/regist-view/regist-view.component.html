@@ -1,0 +1,21 @@
+<div class="row">
+  <form class="col s4 offset-s4">
+    <h3 class="red-text text-lighten-2">Regisztráció</h3>
+    <div class="row">
+      <div class="input-field col s12">
+        <input #username type="username" [ngClass]="error ? 'error' : ''" placeholder="Felhasználó név">
+      </div>
+    </div>
+    <div class="row">
+      <div class="input-field col s12">
+        <input #password type="password" [ngClass]="error ? 'error' : ''" placeholder="Jelszó">
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <input type="button" value="Regisztráció" class="btn"
+               (click)="tryRegist(username.value, password.value)">
+      </div>
+    </div>
+  </form>
+</div>

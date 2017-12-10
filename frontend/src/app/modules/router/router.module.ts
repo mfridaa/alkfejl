@@ -7,6 +7,7 @@ import { OrdersListViewComponent } from '../../components/orders-list-view/order
 import { UserListViewComponent } from '../../components/user-list-view/user-list-view.component';
 import { UserItemViewComponent } from '../../components/user-item-view/user-item-view.component';
 import { LoginViewComponent } from '../../components/login-view/login-view.component';
+import { RegistViewComponent } from '../../components/regist-view/regist-view.component';
 
 const routes: Routes = [
   { path: '', component: OrdersListViewComponent },
@@ -15,7 +16,8 @@ const routes: Routes = [
   { path: 'product/:id', component: ProductItemViewComponent },
   { path: 'users', component: UserListViewComponent },
   { path: 'user/:id', component: UserItemViewComponent },
-  { path: 'login', component: LoginViewComponent }
+  { path: 'login', component: LoginViewComponent },
+  { path: 'registration', component: RegistViewComponent }
 ];
 
 @NgModule({

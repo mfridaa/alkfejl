@@ -1,5 +1,6 @@
 package hu.elte.alkfejl.controller;
 
+import hu.elte.alkfejl.annotation.Role;
 import hu.elte.alkfejl.entity.User;
 import hu.elte.alkfejl.repository.UserRepository;
 import hu.elte.alkfejl.service.Session;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -23,7 +25,8 @@ public class AuthController {
 
     @Autowired
     UserRepository userRepository;
-
+    
+    @Role({User.Role.GUEST})
     @RequestMapping("/login")
     public ResponseEntity<User> login(@RequestBody User user) {
         Optional<User> dbUser =
@@ -49,6 +52,18 @@ public class AuthController {
             return ResponseEntity.ok(false);
         } else {
             return ResponseEntity.ok(session.getUser());
+        }
+    }
+    
+    @PostMapping("/registration")
+    @Role({User.Role.GUEST})
+    public ResponseEntity create(@RequestBody User user){
+        try{
+            user.setPassword(passwordEncoder.encode(user.getPassword()));
+            User saved = userRepository.save(user);
+            return ResponseEntity.ok(saved);
+        }catch(Exception e){
+            return ResponseEntity.badRequest().build();
         }
     }
 }

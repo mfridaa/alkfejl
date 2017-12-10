@@ -25,6 +25,15 @@ export class AuthService {
     }) as Observable<User>;
   }
 
+  public regist(username: string, password: string): Observable<User> {
+    var role = "USER"
+    return this.http.post(AuthService.api + '/registration', {
+      username,
+      password,
+      role
+    }) as Observable<User>;
+  }
+
   public setUser(user: User) {
     AuthService.user = user;
   }

@@ -12,6 +12,9 @@
         <li *ngIf="!this.authService.getUser()">
           <a routerLink="/login">Bejelentkezés</a>
         </li>
+        <li *ngIf="!this.authService.getUser()">
+          <a routerLink="/registration">Regisztráció</a>
+        </li>
       </ul>
     </div>
   </div>

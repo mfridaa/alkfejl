@@ -1,5 +1,6 @@
 package hu.elte.alkfejl.controller;
 
+import hu.elte.alkfejl.annotation.Role;
 import hu.elte.alkfejl.entity.User;
 import hu.elte.alkfejl.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class UserController {
     private PasswordEncoder passwordEncoder;
     
     @GetMapping("")
+    @Role({User.Role.ADMIN})
     public ResponseEntity<Iterable<User>> getAll() {
         Iterable<User> users = userRepository.findAll();
         return ResponseEntity.ok(users);
@@ -35,7 +37,7 @@ public class UserController {
     }
     
     @PostMapping("")
-    public ResponseEntity<User> create(@RequestBody User user) {
+    public ResponseEntity create(@RequestBody User user){
         user.setPassword(passwordEncoder.encode(user.getPassword()));    
         User saved = userRepository.save(user);
         return ResponseEntity.ok(saved);
