@@ -43,6 +43,7 @@ public class OrderController {
     }
     
     @GetMapping("/{id}")
+    @Role({User.Role.ADMIN})
     public ResponseEntity<Orders> getOne(@PathVariable Long id) {
         Orders order = orderRepository.findOne(id);
         return ResponseEntity.ok(order);
@@ -82,7 +83,7 @@ public class OrderController {
     }
     
     @GetMapping("/user/{userId}")
-    public ResponseEntity<Iterable<Orders>> getAllByUserId(@PathVariable Long userId) {
+    public ResponseEntity<Iterable<Orders> > getAllByUserId(@PathVariable Long userId) {
         User user = userRepository.findOne(userId);
         Iterable<Orders> orders = orderRepository.findAllByUser(user);
         return ResponseEntity.ok(orders);

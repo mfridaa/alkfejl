@@ -7,14 +7,15 @@ export class User {
         public id: number,
         public name: String,
         public password: String,
-        public role: string
+        public role: string,
+        public orders : Orders[]
     ) {}
 
-    public get orders() {
+/*    public get orders() {
         return this._orders;
     }
 
     public set orders(orders: Orders[]) {
         this._orders = orders;
-    }
+    }*/
 }
