@@ -5,22 +5,18 @@ import { Product } from '../classes/product';
 
 @Injectable()
 export class ProductService {
-  private static api: string = 'http://localhost:4200/api/Product';
+  private static api: string = 'http://localhost:4200/api/product';
 
   constructor(
     private http: HttpClient
   ) { }
 
   public getProducts(): Observable<Product[]> {
-    //return ProductService._data;
-    let productStream = this.http.get(ProductService.api) as Observable<Product[]>;
-    return productStream;
+    return this.http.get(ProductService.api) as Observable<Product[]>;
   }
 
   public getProduct(id: number): Observable<Product> {
-    //return ProductService._data.find((Product) => Product.id === id);
-    let productStream = this.http.get(ProductService.api + '/' + id) as Observable<Product>;
-    return productStream;
+    return this.http.get(ProductService.api + '/' + id) as Observable<Product>;
   }
 
   public delProductById(id: number): Observable<any> {

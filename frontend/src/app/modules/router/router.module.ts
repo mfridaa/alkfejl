@@ -11,7 +11,7 @@ import { RegistViewComponent } from '../../components/regist-view/regist-view.co
 
 const routes: Routes = [
   { path: 'orders', component: OrdersListViewComponent },
-  { path: 'products', component: ProductListViewComponent },
+  { path: 'product', component: ProductListViewComponent },
   { path: 'orders/:id', component: OrdersItemViewComponent },
   { path: 'product/:id', component: ProductItemViewComponent },
   { path: 'users', component: UserListViewComponent },

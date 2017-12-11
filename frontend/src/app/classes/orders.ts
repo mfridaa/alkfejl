@@ -12,7 +12,7 @@ export class Orders {
     public constructor(
         public id: number, 
         public amount: number, 
-        public date: Date, 
+        public orderDate: Date, 
         public status: boolean,
         public userid: number,
         public productid: number) 

@@ -9,8 +9,8 @@
     <tbody>
     <tr *ngFor="let order of orders">
       <th>{{order.amount}}</th>
-      <th><a routerLink="/user/{{order.id}}">{{order.date}}</a></th>
-      <td>{{order.status}}</td>
+      <th>{{order.orderDate | date : "yyyy.MM.dd"}}</th>
+      <th><a routerLink="/user/{{order.id}}">{{order.status}}</a></th>
     </tr>
     </tbody>
   </table>

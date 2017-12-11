@@ -1,7 +1,28 @@
-<h2 class="red-text text-lighten-2">Product List</h2>
-<div class="collection">
-  <app-product *ngFor="let product of product"
-            [product]="product"
-            (delProduct)="delProduct($event)">
-  </app-product>
+<div *ngIf="product">
+  <h2 class="red-text text-lighten-2">Product List</h2>
+  <table class="striped highlight">
+    <thead>
+      <th>Név</th>
+      <th>Ár</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let p of product">
+      <th>{{p.name}}</th>
+      <td>{{p.price}}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>
+<div *ngIf="!product">
+    <div class="preloader-wrapper active">
+    <div class="spinner-layer spinner-red-only">
+      <div class="circle-clipper left">
+        <div class="circle"></div>
+      </div><div class="gap-patch">
+        <div class="circle"></div>
+      </div><div class="circle-clipper right">
+        <div class="circle"></div>
+      </div>
+    </div>
+  </div>
 </div>

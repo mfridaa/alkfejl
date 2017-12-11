@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,10 +36,16 @@ public class ProductController {
     @Autowired
     private ProductRepository productRepository;
     
-    @GetMapping("/allproducts")
-    public ResponseEntity<Iterable<Product> > getAllProduct(){
+    @GetMapping("")
+    public ResponseEntity<Iterable<Product> > get(){
         Iterable<Product> p = productRepository.findAll();
         return ResponseEntity.ok(p);
+    }
+    
+    @GetMapping("/{id}")
+    public ResponseEntity<Product> getOne(@PathVariable Long id) {
+        Product product = productRepository.findOne(id);
+        return ResponseEntity.ok(product);
     }
     
     @GetMapping("/productByName")
