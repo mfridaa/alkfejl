@@ -46,7 +46,7 @@ public class Orders extends BaseEntity{
     @JsonIgnoreProperties("orders")
     private User user;
     
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ManyToOne(targetEntity = Product.class, optional = false)
     @JoinColumn(name = "product_id")
     private Product product;
 }

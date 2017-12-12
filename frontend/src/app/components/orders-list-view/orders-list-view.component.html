@@ -10,9 +10,9 @@
     <tr *ngFor="let order of orders">
       <th>{{order.amount}}</th>
       <th>{{order.orderDate | date : "yyyy.MM.dd"}}</th>
-      <th *ngIf="order.status"><a routerLink="/user/{{order.id}}">
+      <th *ngIf="order.status"><a routerLink="/user/{{order.user.id}}">
         Fizetve</a></th>
-        <th *ngIf="!order.status"><a routerLink="/user/{{order.id}}">
+        <th *ngIf="!order.status"><a routerLink="/user/{{order.user.id}}">
           Függőben</a></th>
     </tr>
     </tbody>

@@ -38,9 +38,9 @@ public class Product extends BaseEntity {
     @Column
     private Long price;
     
-    @OneToOne(mappedBy = "product")
+    @OneToMany(mappedBy = "product")
     @JsonIgnore
-    private Orders order;
+    private List<Orders> order;
     
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
     @JsonIgnore

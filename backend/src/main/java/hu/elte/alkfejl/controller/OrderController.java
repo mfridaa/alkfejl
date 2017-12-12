@@ -60,7 +60,7 @@ public class OrderController {
         return ResponseEntity.ok().build();
     }
     
-    @DeleteMapping("/deleteOrder")
+   /* @DeleteMapping("/deleteOrder")
     @Role({User.Role.USER, User.Role.ADMIN})
     public ResponseEntity deleteOrder(@RequestBody Orders order){
         try{
@@ -69,7 +69,7 @@ public class OrderController {
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok().build();
-    }
+    }*/
     
     @PatchMapping("/updateOrder")
     @Role({User.Role.USER, User.Role.ADMIN})
@@ -87,5 +87,13 @@ public class OrderController {
         User user = userRepository.findOne(userId);
         Iterable<Orders> orders = orderRepository.findAllByUser(user);
         return ResponseEntity.ok(orders);
+    }
+    
+    @DeleteMapping("/{id}")
+    @Role({User.Role.USER, User.Role.ADMIN})
+    public ResponseEntity delete(@PathVariable Long id) {
+        orderRepository.delete(id);
+        Iterable<Orders> order = orderRepository.findAll();
+        return ResponseEntity.ok(order);
     }
 }

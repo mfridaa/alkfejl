@@ -1,8 +1,19 @@
 <a routerLink="/orders/{{order.id}}" class="collection-item">
-  <span><b>{{order.id}}</b> <b>{{order.amount}} <b>{{order.orderDate | date : "yyyy.MM.dd"}}</b> </b> </span>
   <span
-        class="right delete" (click)="clickButton($event)">
-        
-    <i class="material-icons red-text">delete</i>
+    class="right delete" (click)="clickButton($event)">
+  <i class="material-icons red-text">delete</i>
   </span>
+  <span>
+    Termék név: 
+    <b>{{order.product.name}}</b> <br>
+  </span>
+  <span>
+    Mennyiség: 
+    <b>{{order.amount}}  </b> <br>
+  </span>
+  <span>
+    Dátum: 
+    <b> {{order.orderDate | date : "yyyy.MM.dd"}}</b> <br>
+  </span>
+  
 </a>

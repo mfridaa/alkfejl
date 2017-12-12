@@ -26,6 +26,6 @@ export class OrdersService {
   }
 
   public delOrders(order: Orders) {
-    //this.delOrdersById(ordersid);
+    this.delOrdersById(order.id);
   }
 }

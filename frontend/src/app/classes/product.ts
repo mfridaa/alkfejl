@@ -9,6 +9,7 @@ export class Product {
         public name: string, 
         public price: number
     ){}
+    
 
     public get categories() {
         return this._categories;
