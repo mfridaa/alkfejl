@@ -1,6 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Orders } from '../../classes/orders';
 import { AuthService } from '../../services/auth.service';
+import { OrdersService } from '../../services/orders.service';
 
 @Component({
   selector: 'app-orders',
@@ -22,7 +23,7 @@ export class OrdersComponent implements OnInit {
   }
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
   ) { }
 
   ngOnInit() {

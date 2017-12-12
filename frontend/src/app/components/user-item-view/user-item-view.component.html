@@ -16,7 +16,7 @@
   <h3>Rendelések</h3>
   <ul class="collection">
     <app-orders *ngFor="let order of user.orders" [order]="order"
-              (delOrders)="delOrders($event)"></app-orders>
+              (delOrders)="delOrder($event)"></app-orders>
   </ul>
 </div>
 <div *ngIf="!user">

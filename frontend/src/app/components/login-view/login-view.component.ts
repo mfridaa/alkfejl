@@ -22,7 +22,6 @@ export class LoginViewComponent implements OnInit {
 
   private tryLogin(username: string, password: string): void {
     this.authService.login(username, password).subscribe((user) => {
-      console.log(user); 
       this.authService.setUser(user as User);
       this.router.navigate(['/']);
     }, (err) => {

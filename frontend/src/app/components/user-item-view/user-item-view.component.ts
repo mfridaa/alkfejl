@@ -33,7 +33,7 @@ export class UserItemViewComponent implements OnInit {
 
   private delOrder(id: number): void {
     this.ordersService.delOrdersById(id).subscribe((orders) => {
-      this.user.orders = orders.filter(order => orders.user.id === this.user.id) as Orders[];
+      this.user.orders = orders.filter(order => order.user.id == this.user.id) as Orders[];
     });
   }
 

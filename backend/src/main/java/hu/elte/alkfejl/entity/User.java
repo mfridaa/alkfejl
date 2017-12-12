@@ -7,6 +7,7 @@ package hu.elte.alkfejl.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -20,7 +21,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.OneToMany;
 /**
  *
- * @author Blanka Orosz
+ * @author Blanki Orosz
  */
 
 @Entity
@@ -32,13 +33,17 @@ public class User extends BaseEntity{
     @Column(nullable = false, unique = true)
     private String username;
 
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Column(nullable = false)
     private String password;
 
-    @Column
+    
+    @Column(nullable = false)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Enumerated(EnumType.STRING)
     private Role role;
 
+   
     public enum Role {
         GUEST, USER, ADMIN
     }
