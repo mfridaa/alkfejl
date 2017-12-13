@@ -39,7 +39,6 @@ public class User extends BaseEntity{
 
     
     @Column(nullable = false)
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     @Enumerated(EnumType.STRING)
     private Role role;
 

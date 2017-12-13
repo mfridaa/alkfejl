@@ -1,12 +1,7 @@
-<a class="btn-flat right" routerLink="/users">Vissza a lista nézetbe</a>
 <div *ngIf="user">
   <h2 class="red-text text-lighten-2">{{user.username}}</h2>
   <table>
     <tbody>
-      <tr>
-        <th>Azonosító</th>
-        <td>{{user.id}}</td>
-      </tr>
       <tr>
         <th>Felhasználó név</th>
         <td>{{user.username}}</td>

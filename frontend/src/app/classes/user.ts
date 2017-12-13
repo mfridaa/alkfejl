@@ -7,7 +7,7 @@ export class User {
         public id: number,
         public name: String,
         public password: String,
-        public role: string,
+        public role: String,
         public orders : Orders[]
     ) {}
 

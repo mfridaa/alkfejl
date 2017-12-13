@@ -42,6 +42,10 @@ export class AuthService {
     return AuthService.user;
   }
 
+  public getUserId(): number{
+      return AuthService.user.id;
+  }
+
   public syncLoginStatus(): void {
     this.http.get(AuthService.api + '/user').subscribe((user: User) => {
       if (user) {

@@ -5,12 +5,14 @@
       <th>Azonosító</th>
       <th>Név</th>
       <th>Felhasználó név</th>
+      <th>Szerepkör</th>
     </thead>
     <tbody>
     <tr *ngFor="let user of users">
       <th>{{user.id}}</th>
       <th><a routerLink="/user/{{user.id}}">{{user.username}}</a></th>
       <td>{{user.username}}</td>
+      <td>{{user.role}}</td>
     </tr>
     </tbody>
   </table>
