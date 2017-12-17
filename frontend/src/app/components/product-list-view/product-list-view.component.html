@@ -19,8 +19,10 @@
               (delProducts)="delProducts($event)"
               (addProducts)="addProducts($event)">
     </app-product>
-    
   </ul>
+  <span *ngIf="error" class="new badge red" data-badge-caption="" style="font-size: 24px">
+    A termék szerepel rendelésben, nem törölhető!
+  </span>
 </div>
 <div *ngIf="!product">
     <div class="preloader-wrapper active">

@@ -38,7 +38,7 @@ public class Category extends BaseEntity{
         ART, HOME, TECH, WOMEN, MEN
     }
     
-    @ManyToMany(mappedBy = "categories")
+    @ManyToMany(mappedBy = "categories", cascade = CascadeType.ALL)
     @JsonIgnore
-    private Set<Product> products;
+    private List<Product> products;
 }
