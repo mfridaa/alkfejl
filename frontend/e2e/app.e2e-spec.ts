@@ -38,14 +38,15 @@ describe('alkfejl-angular App', () => {
    it('should be able to navigate to registration', () => {
        expect(getPath()).toEqual('/registration');
 
-    });
+    }); 
 
-    // it('should makea registration', () => {
-    //     element(by.css('input[type="username"]')).sendKeys('try');
-    //     element(by.css('input[type="password"]')).sendKeys('try');
-    //     element(by.css('input[type="button"]')).click();
-    //     expect(getPath()).toEqual('/login');
-    // });
+
+    it('should make a registration', () => {
+        element(by.css('input[type="username"]')).sendKeys('try');
+        element(by.css('input[type="password"]')).sendKeys('try');
+        element(by.css('input[type="button"]')).click();
+        expect(getPath()).toEqual('/login');
+    });
 
       beforeEach(() => {
         browser.get('/orders');
