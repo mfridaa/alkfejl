@@ -12,6 +12,7 @@ import { ProductService } from '../../services/product.service';
 export class ProductListViewComponent implements OnInit {
   private product: Product[];
   private order: Orders;
+  private error: boolean;
 
   constructor(
     private ProductService: ProductService
@@ -26,6 +27,10 @@ export class ProductListViewComponent implements OnInit {
   private delProducts(id: number): void {
     this.ProductService.delProductById(id).subscribe((product) => {
       this.product = product as Product[];
+    },(err) => {
+      if (err.status === 500) {
+        this.error = true;
+      }
     });
   }
 

@@ -12,6 +12,7 @@ import hu.elte.alkfejl.entity.User;
 import hu.elte.alkfejl.repository.ProductRepository;
 import java.util.List;
 import java.util.Optional;
+import javax.persistence.PreRemove;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.http.ResponseEntity;
@@ -76,6 +77,7 @@ public class ProductController {
     public ResponseEntity delete(@PathVariable Long id) {
         productRepository.delete(id);
         Iterable<Product> product = productRepository.findAll();
+     //   productRepository.deleteCategory(id);
         return ResponseEntity.ok(product);
     }
     

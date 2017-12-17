@@ -18,4 +18,7 @@ export class NewProductViewComponent implements OnInit {
   ngOnInit() {
   }
 
+  private tryRegist(name: string, price: number, category:number): void {
+    
+  }
 }

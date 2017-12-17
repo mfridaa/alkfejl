@@ -42,11 +42,11 @@ public class Product extends BaseEntity {
     @JsonIgnore
     private List<Orders> order;
     
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    @ManyToMany()
     @JsonIgnore
     @JoinTable(name = "CATEGORY_PRODUCT",
         joinColumns = @JoinColumn(name = "products_id"),
         inverseJoinColumns = @JoinColumn(name = "categories_id")
     )
-    private Set<Category> categories;
+    private List<Category> categories;
 }

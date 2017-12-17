@@ -8,6 +8,7 @@ import hu.elte.alkfejl.entity.Category;
 
 import java.util.List;
 import java.util.Optional;
+import javax.persistence.PreRemove;
 
 @Repository
 public interface ProductRepository extends CrudRepository<Product, Long> {
@@ -16,5 +17,8 @@ public interface ProductRepository extends CrudRepository<Product, Long> {
     
     @Query("SELECT p FROM Product p JOIN p.categories cp WHERE cp.id = ?1")
     List<Product> selectProducts(Long id);
+    
+   // @Query("DELETE FROM Product.categories cp WHERE cp.id = ?1")
+    //void deleteCategory(Long id);
 }
 
