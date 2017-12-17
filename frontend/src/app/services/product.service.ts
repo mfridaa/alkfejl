@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs/Observable'; 
 import { Product } from '../classes/product';
 import { Orders } from '../classes/orders';
+import { Category } from '../classes/category';
 
 @Injectable()
 export class ProductService {
@@ -50,4 +51,13 @@ export class ProductService {
   public addProducts(product: Product) {
     this.addProductsById(product);
   }
+
+  public newProduct(name: string, price: number, category: number): Observable<Product> {
+    return this.http.post(ProductService.api + '/newProduct/' + category, {
+      name,
+      price
+    }) as Observable<Product>;
+
+  }
+
 }

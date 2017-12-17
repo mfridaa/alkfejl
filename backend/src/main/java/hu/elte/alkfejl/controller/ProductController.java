@@ -6,12 +6,17 @@
 package hu.elte.alkfejl.controller;
 
 import hu.elte.alkfejl.annotation.Role;
+import hu.elte.alkfejl.entity.Category;
 import hu.elte.alkfejl.entity.Orders;
 import hu.elte.alkfejl.entity.Product;
 import hu.elte.alkfejl.entity.User;
+import hu.elte.alkfejl.repository.CategoryRepository;
 import hu.elte.alkfejl.repository.ProductRepository;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
 import javax.persistence.PreRemove;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.jpa.repository.Query;
@@ -34,8 +39,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/api/product")
 public class ProductController {
+    
     @Autowired
     private ProductRepository productRepository;
+    @Autowired
+    private CategoryRepository categoryRepository;
     
     @GetMapping("")
     public ResponseEntity<Iterable<Product> > get(){
@@ -79,6 +87,15 @@ public class ProductController {
         Iterable<Product> product = productRepository.findAll();
      //   productRepository.deleteCategory(id);
         return ResponseEntity.ok(product);
+    }
+    
+    @PostMapping("/newProduct/{id}")
+    @Role({User.Role.ADMIN})
+    public ResponseEntity create(@RequestBody Product product, @PathVariable Long id){
+        Category category = categoryRepository.findOne(id);
+        product.getCategories().add(category);
+        Product saved = productRepository.save(product);
+        return ResponseEntity.ok(saved);
     }
     
     /*@PatchMapping("/updateProduct")

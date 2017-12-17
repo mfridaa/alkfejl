@@ -18,7 +18,8 @@ export class NewProductViewComponent implements OnInit {
   ngOnInit() {
   }
 
-  private tryRegist(name: string, price: number, category:number): void {
-    
+  private tryAddProduct(name: string, price: number, category:number): void {
+    this.productService.newProduct(name, price, category).subscribe((product) => {
+    });
   }
 }

@@ -6,6 +6,7 @@
 package hu.elte.alkfejl.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 import javax.persistence.CascadeType;
@@ -48,5 +49,5 @@ public class Product extends BaseEntity {
         joinColumns = @JoinColumn(name = "products_id"),
         inverseJoinColumns = @JoinColumn(name = "categories_id")
     )
-    private List<Category> categories;
+    private List<Category> categories = new ArrayList();
 }
