@@ -77,6 +77,14 @@ Tesztelés:
 Az alkalmazás megfelelő tesztelése érdekében E2E tesztek íródtak. Ezekből pár eredménye az alábbi képen is megtekinhető:
 https://github.com/mfridaa/alkfejl/blob/master/tests.PNG
 
+Tesztesetek:
+-login sikeres
+-login sikertelen
+-regisztráció
+-termékek kilistázása
+-egy termék id szerint
+-rendelések kilistázása
+-egy rendelés id szerint
 
 
 Felhasználói dokumentáció:
