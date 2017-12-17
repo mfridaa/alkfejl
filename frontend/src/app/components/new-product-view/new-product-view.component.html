@@ -1,0 +1,34 @@
+<div class="row center">
+    <form class="col s4 offset-s4">
+      <h4 class="red-text text-lighten-2">Új termék felvétele</h4>
+      <div class="row">
+        <div class="input-field col s12">
+          <input #name type="text" [ngClass]="error ? 'error' : ''" placeholder="Termék név">
+        </div>
+      </div>
+      <div class="row">
+        <div class="input-field col s12">
+          <input #price type="number" [ngClass]="error ? 'error' : ''" placeholder="Ár">
+        </div>
+      </div>
+      <div class="row">
+          <div class="col s12">
+              <label style="font-size:16px">Termék kategória</label>
+              <select #category class="browser-default">
+                <option value="" disabled selected>Válassz!</option>
+                <option value="0">Art</option>
+                <option value="1">Otthon</option>
+                <option value="2">Tech</option>
+                <option value="3">Női</option>
+                <option value="4">Férfi</option>
+              </select>
+          </div>          
+      </div>
+      <div class="row">
+        <div class="col s12 center">
+          <input type="button" value="Felvétel" class="btn"
+                 (click)="tryAddProduct(name.value, price.value, category.value)">
+        </div>
+      </div>
+    </form>
+  </div>

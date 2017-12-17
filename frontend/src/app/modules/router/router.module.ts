@@ -10,6 +10,7 @@ import { LoginViewComponent } from '../../components/login-view/login-view.compo
 import { RegistViewComponent } from '../../components/regist-view/regist-view.component';
 import { SuccessViewComponent } from '../../components/success-view/success-view.component';
 import { ProductCategoryViewComponent } from '../../components/product-category-view/product-category-view.component';
+import { NewProductViewComponent } from '../../components/new-product-view/new-product-view.component';
 
 const routes: Routes = [
   { path: 'orders', component: OrdersListViewComponent },
@@ -21,7 +22,8 @@ const routes: Routes = [
   { path: 'login', component: LoginViewComponent },
   { path: 'registration', component: RegistViewComponent },
   { path: 'success', component: SuccessViewComponent },
-  { path: 'product/productByCategory/:id', component: ProductCategoryViewComponent }
+  { path: 'product/productByCategory/:id', component: ProductCategoryViewComponent },
+  { path: 'newproduct', component: NewProductViewComponent }
 ];
 
 @NgModule({

@@ -1,0 +1,38 @@
+<div *ngIf="product">
+    <h3>Termékek</h3>
+    <nav>
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo">Kategóriák</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a routerLink="/product">Összes</a></li>
+            <li><a (click)="selectCategory(3)">Női</a></li>
+            <li><a (click)="selectCategory(4)">Férfi</a></li>
+            <li><a (click)="selectCategory(2)">Tech</a></li>
+            <li><a (click)="selectCategory(0)">Art</a></li>
+            <li><a (click)="selectCategory(1)">Otthon</a></li>
+            
+          </ul>
+        </div>
+      </nav>
+    <ul  class="collection">
+      <app-product *ngFor="let p of product" 
+                [product]="p"
+                (delProducts)="delProducts($event)"
+                (addProducts)="addProducts($event)">
+      </app-product>
+    </ul>
+  </div>
+  <div *ngIf="!product">
+      <div class="preloader-wrapper active">
+      <div class="spinner-layer spinner-red-only">
+        <div class="circle-clipper left">
+          <div class="circle"></div>
+        </div><div class="gap-patch">
+          <div class="circle"></div>
+        </div><div class="circle-clipper right">
+          <div class="circle"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

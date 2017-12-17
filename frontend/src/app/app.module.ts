@@ -16,6 +16,7 @@ import { LoginViewComponent } from './components/login-view/login-view.component
 import { RegistViewComponent } from './components/regist-view/regist-view.component';
 import { SuccessViewComponent } from './components/success-view/success-view.component';
 import { ProductCategoryViewComponent } from './components/product-category-view/product-category-view.component';
+import { NewProductViewComponent } from './components/new-product-view/new-product-view.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { ProductCategoryViewComponent } from './components/product-category-view
     LoginViewComponent,
     RegistViewComponent,
     SuccessViewComponent,
-    ProductCategoryViewComponent
+    ProductCategoryViewComponent,
+    NewProductViewComponent
   ],
   imports: [
     BrowserModule,
