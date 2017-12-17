@@ -90,7 +90,7 @@ Tesztesetek:
 Felhasználói dokumentáció:
 --------------------------
 -Az alábbi alkalmazás egy webshopot valósít meg, melyben kedvére válogathat a felhasználó
-a különböző kategóriákba tartozó termékek közül.
+a különböző kategóriákba tartozó termékek közül. Miután a szerver és a kliens egyaránt el lett indítva, program a http://localhost:4200/ címen érhető el.
 
 -Első képésként, ha még nem történt regisztráció, ezt a Regisztráció gombra kattintva van lehetőség megtenni.
 Itt meg kell adni eg felhasználónevet és egy jeszót, majd megnyomni a regisztráció gombot,
