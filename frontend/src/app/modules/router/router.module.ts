@@ -8,6 +8,7 @@ import { UserListViewComponent } from '../../components/user-list-view/user-list
 import { UserItemViewComponent } from '../../components/user-item-view/user-item-view.component';
 import { LoginViewComponent } from '../../components/login-view/login-view.component';
 import { RegistViewComponent } from '../../components/regist-view/regist-view.component';
+import { SuccessViewComponent } from '../../components/success-view/success-view.component';
 
 const routes: Routes = [
   { path: 'orders', component: OrdersListViewComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'users', component: UserListViewComponent },
   { path: 'user/:id', component: UserItemViewComponent },
   { path: 'login', component: LoginViewComponent },
-  { path: 'registration', component: RegistViewComponent }
+  { path: 'registration', component: RegistViewComponent },
+  { path: 'success', component: SuccessViewComponent }
 ];
 
 @NgModule({

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, Input, EventEmitter } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { OrdersService } from '../../services/orders.service';
 import { Orders } from '../../classes/orders';
@@ -21,8 +21,13 @@ export class OrdersItemViewComponent implements OnInit {
   ngOnInit() {
     let id: number = parseInt(this.route.snapshot.paramMap.get('id'));
     this.ordersService.getOrder(id).subscribe((order) => {
-      this.order = order as Orders;
+      this.order = order as Orders
     });
   }
 
+  public payOrder(): void {
+   this.ordersService.payOrdersById(this.order).subscribe((order) => {
+    });
+    this.router.navigate(['/success']);
+  }
 }

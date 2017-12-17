@@ -1,7 +1,11 @@
 <a routerLink="/orders/{{order.id}}" class="collection-item">
   <span
     class="right delete" (click)="clickButton($event)">
-  <i class="material-icons red-text">delete</i>
+  <i class="material-icons red-text" style="font-size: 2.5rem">delete</i>
+  </span>
+  <span
+  class="right delete" *ngIf="!order.status">
+    <i class="material-icons red-text" style="font-size: 2.5rem">attach_money</i>
   </span>
   <span>
     Termék név: 

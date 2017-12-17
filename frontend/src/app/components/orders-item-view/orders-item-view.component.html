@@ -1,23 +1,30 @@
-<a class="btn-flat right" routerLink="/orders">Vissza a lista nézetbe</a>
-<div *ngIf="orders">
-  <table>
-    <tbody>
-      <tr>
-        <th>Mennyiség</th>
-        <td>{{orders.amount}}</td>
-      </tr>
-      <tr>
-        <th>Dátum</th>
-        <td>{{orders.date}}</td>
-      </tr>
-      <tr>
-        <th>Státusz</th>
-        <td>{{orders.status}}</td>
-      </tr>
-    </tbody>
-  </table>
+<div class="card col s12 m6" *ngIf="order">
+    <span
+    class="right" (click)="payOrder()" *ngIf="!order.status">
+      <i class="material-icons red-text" style="font-size: 4.5rem">monetization_on</i>
+    </span>
+    <span class="right" *ngIf="order.status">
+        <i class="material-icons red-text" style="font-size: 4.5rem">money_off</i>
+    </span>
+    <span>
+      Termék név: 
+      <b>{{order.product.name}}</b> <br>
+    </span>
+    <span>
+      Mennyiség: 
+      <b>{{order.amount}}  </b> <br>
+    </span>
+    <span>
+      Dátum: 
+      <b> {{order.orderDate | date : "yyyy.MM.dd"}}</b> <br>
+    </span>
+    <span>
+        Ár: 
+        <b> {{order.product.price * order.amount}}</b> <br>
+    </span>
+    
 </div>
-<div *ngIf="!orders">
+<div *ngIf="!order">
   <div class="preloader-wrapper active">
     <div class="spinner-layer spinner-red-only">
       <div class="circle-clipper left">

@@ -1,5 +1,7 @@
 <a routerLink="/product/{{product.id}}" class="collection-item">
-  <span *ngIf="authService.hasRole('ADMIN') || authService.hasRole('USER')" class="right create" (click)="clickAdd($event)"><i class="material-icons">add_circle</i></span>
+  <span *ngIf="authService.hasRole('ADMIN') || authService.hasRole('USER')" class="right create" (click)="clickAdd($event)">
+    <i class="material-icons">add_shopping_cart</i>
+  </span>
   <span *ngIf="authService.hasRole('ADMIN')"
         class="right delete" (click)="clickDeleteButton($event)">
     <i class="material-icons red-text">delete</i>

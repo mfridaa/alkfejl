@@ -14,6 +14,7 @@ import { UserListViewComponent } from './components/user-list-view/user-list-vie
 import { UserItemViewComponent } from './components/user-item-view/user-item-view.component';
 import { LoginViewComponent } from './components/login-view/login-view.component';
 import { RegistViewComponent } from './components/regist-view/regist-view.component';
+import { SuccessViewComponent } from './components/success-view/success-view.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { RegistViewComponent } from './components/regist-view/regist-view.compon
     UserListViewComponent,
     UserItemViewComponent,
     LoginViewComponent,
-    RegistViewComponent
+    RegistViewComponent,
+    SuccessViewComponent
   ],
   imports: [
     BrowserModule,

@@ -20,12 +20,28 @@ export class OrdersService {
   }
 
   public delOrdersById(id: number): Observable<any> {
-    //let idx: number = OrdersService._data.findIndex((Orders) => Orders.id === id);
-    //OrdersService._data.splice(idx, 1);
     return this.http.delete(OrdersService.api + '/' + id);
   }
 
   public delOrders(order: Orders) {
     this.delOrdersById(order.id);
+  }
+  
+
+  public payOrdersById(order: Orders): Observable<Orders> {
+    var id = order.id;
+    var amount = order.amount;
+    var status = true;
+    var orderDate = order.orderDate;
+    var product = order.product;
+    var user = order.user;
+    return this.http.put(OrdersService.api + '/' + id, {
+        id,
+        amount,
+        status,
+        orderDate,
+        product,
+        user
+    }) as Observable<Orders>;
   }
 }
