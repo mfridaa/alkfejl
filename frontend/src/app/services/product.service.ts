@@ -21,6 +21,10 @@ export class ProductService {
     return this.http.get(ProductService.api + '/' + id) as Observable<Product>;
   }
 
+  public getProductsByCategory(id: number): Observable<Product[]> {
+    return this.http.get(ProductService.api + '/productByCategory/' + id) as Observable<Product[]>;
+  }
+
   public delProductById(id: number): Observable<any> {
     //let idx: number = OrdersService._data.findIndex((Orders) => Orders.id === id);
     //OrdersService._data.splice(idx, 1);

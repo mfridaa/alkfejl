@@ -9,6 +9,7 @@ import { UserItemViewComponent } from '../../components/user-item-view/user-item
 import { LoginViewComponent } from '../../components/login-view/login-view.component';
 import { RegistViewComponent } from '../../components/regist-view/regist-view.component';
 import { SuccessViewComponent } from '../../components/success-view/success-view.component';
+import { ProductCategoryViewComponent } from '../../components/product-category-view/product-category-view.component';
 
 const routes: Routes = [
   { path: 'orders', component: OrdersListViewComponent },
@@ -19,7 +20,8 @@ const routes: Routes = [
   { path: 'user/:id', component: UserItemViewComponent },
   { path: 'login', component: LoginViewComponent },
   { path: 'registration', component: RegistViewComponent },
-  { path: 'success', component: SuccessViewComponent }
+  { path: 'success', component: SuccessViewComponent },
+  { path: 'product/productByCategory/:id', component: ProductCategoryViewComponent }
 ];
 
 @NgModule({
