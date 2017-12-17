@@ -12,6 +12,52 @@ describe('alkfejl-angular App', () => {
     page = new AppPage();
   });
 
+
+    beforeEach(() => {
+        browser.get('/orders/0');
+    });
+    
+   it('should be able to navigate to order/0', () => {
+       expect(getPath()).toEqual('/order/0');
+
+    });
+
+    beforeEach(() => {
+        browser.get('/product');
+    });
+    
+   it('should be able to navigate to the products', () => {
+       expect(getPath()).toEqual('/product');
+
+    });
+
+    beforeEach(() => {
+        browser.get('registration');
+    });
+    
+   it('should be able to navigate to registration', () => {
+       expect(getPath()).toEqual('/registration');
+
+    });
+
+    // it('should makea registration', () => {
+    //     element(by.css('input[type="username"]')).sendKeys('try');
+    //     element(by.css('input[type="password"]')).sendKeys('try');
+    //     element(by.css('input[type="button"]')).click();
+    //     expect(getPath()).toEqual('/login');
+    // });
+
+      beforeEach(() => {
+        browser.get('/orders');
+    });
+    
+   it('should be able to navigate to orders', () => {
+       expect(getPath()).toEqual('/orders');
+
+    });
+
+
+
   beforeEach(() => {
         browser.get('/login');
     });
@@ -35,4 +81,7 @@ describe('alkfejl-angular App', () => {
         element(by.css('input[type="button"]')).click();
         expect(getPath()).toEqual('/login');
     });
+
+   
+
 });
