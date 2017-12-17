@@ -32,7 +32,7 @@ import javax.persistence.OneToOne;
 @NoArgsConstructor
 @EqualsAndHashCode(callSuper = true)
 public class Product extends BaseEntity {
-    @Column(nullable = false, unique = true)
+    @Column(nullable = false)
     private String name;
     
     @Column

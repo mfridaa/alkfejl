@@ -71,18 +71,15 @@ public class ProductController {
         return ResponseEntity.ok().build();
     }
     
-    @DeleteMapping("/deleteProduct")
+    @DeleteMapping("/{id}")
     @Role({User.Role.ADMIN})
-    public ResponseEntity deleteOrder(@RequestBody Product product){
-        try{
-            productRepository.delete(product);
-        }catch(Exception e){
-            return ResponseEntity.badRequest().build();
-        }
-        return ResponseEntity.ok().build();
+    public ResponseEntity delete(@PathVariable Long id) {
+        productRepository.delete(id);
+        Iterable<Product> product = productRepository.findAll();
+        return ResponseEntity.ok(product);
     }
     
-    @PatchMapping("/updateProduct")
+    /*@PatchMapping("/updateProduct")
     @Role({User.Role.ADMIN})
     public ResponseEntity updateOrder(@RequestBody Product product){
         try{
@@ -91,5 +88,5 @@ public class ProductController {
             return ResponseEntity.badRequest().build();
         }
         return ResponseEntity.ok().build();
-    }
+    }*/
 }

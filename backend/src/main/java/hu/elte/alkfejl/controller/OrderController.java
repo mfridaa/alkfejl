@@ -10,6 +10,7 @@ import hu.elte.alkfejl.entity.Orders;
 import hu.elte.alkfejl.entity.User;
 import hu.elte.alkfejl.repository.OrderRepository;
 import hu.elte.alkfejl.repository.UserRepository;
+import hu.elte.alkfejl.service.Session;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -35,6 +36,9 @@ public class OrderController {
     private UserRepository userRepository;
     @Autowired
     private OrderRepository orderRepository;
+    @Autowired
+    Session session;
+    
     
     @GetMapping("")
     public ResponseEntity<Iterable<Orders> > get(){
@@ -50,14 +54,18 @@ public class OrderController {
     }
     
     @PostMapping("/addOrder")
-    @Role({User.Role.USER, User.Role.ADMIN})
-    public ResponseEntity addOrder(@RequestBody Orders order){
+    //@Role({User.Role.USER, User.Role.ADMIN})
+    public ResponseEntity create(@RequestBody Orders order){
         try{
+            System.out.println(userRepository.findOne(new Long(0)).getUsername());
+            order.setUser(userRepository.findOne(session.getUser().getId()));
+
             orderRepository.save(order);
+            return ResponseEntity.ok(order);
         }catch(Exception e){
+            System.out.println("rossz");
             return ResponseEntity.badRequest().build();
         }
-        return ResponseEntity.ok().build();
     }
     
    /* @DeleteMapping("/deleteOrder")

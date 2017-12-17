@@ -13,12 +13,20 @@ export class ProductComponent implements OnInit {
   public product: Product;
 
   @Output()
-  public delProdudt: EventEmitter<number> = new EventEmitter();
+  public delProducts: EventEmitter<number> = new EventEmitter();
+  @Output()
+  public addProducts: EventEmitter<Product> = new EventEmitter();
 
-  public clickButton($event: Event): void {
+  public clickDeleteButton($event: Event): void {
     $event.preventDefault();
     $event.stopPropagation();
-    this.delProdudt.emit(this.product.id);
+    this.delProducts.emit(this.product.id);
+  }
+
+  public clickAdd($event: Event): void {
+    $event.preventDefault();
+    $event.stopPropagation();
+    this.addProducts.emit(this.product);
   }
 
   constructor(

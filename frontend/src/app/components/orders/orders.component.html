@@ -15,5 +15,8 @@
     Dátum: 
     <b> {{order.orderDate | date : "yyyy.MM.dd"}}</b> <br>
   </span>
-  
+  <span>
+      Ár: 
+      <b> {{order.product.price * order.amount}}</b> <br>
+  </span>
 </a>

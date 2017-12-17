@@ -7,6 +7,7 @@ package hu.elte.alkfejl.entity;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Date;
 import javax.persistence.CascadeType;
 import lombok.AllArgsConstructor;
@@ -44,6 +45,7 @@ public class Orders extends BaseEntity{
     @JoinColumn
     @ManyToOne(targetEntity = User.class, optional = false)
     @JsonIgnoreProperties("orders")
+    @JsonProperty(access = JsonProperty.Access.READ_ONLY)
     private User user;
     
     @ManyToOne(targetEntity = Product.class, optional = false)

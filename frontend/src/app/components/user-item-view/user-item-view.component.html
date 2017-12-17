@@ -1,14 +1,6 @@
 <div *ngIf="user">
-  <h2 class="red-text text-lighten-2">{{user.username}}</h2>
-  <table>
-    <tbody>
-      <tr>
-        <th>Felhasználó név</th>
-        <td>{{user.username}}</td>
-      </tr>
-    </tbody>
-  </table>
-  <h3>Rendelések</h3>
+  <h3 class="red-text text-lighten-2">Felhasználó név: {{user.username}}</h3>
+  <h4 class="red-text text-lighten-2">Rendelések</h4>
   <ul class="collection">
     <app-orders *ngFor="let order of user.orders" [order]="order"
               (delOrders)="delOrder($event)"></app-orders>

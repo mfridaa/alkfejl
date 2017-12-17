@@ -1,17 +1,12 @@
 <div *ngIf="product">
-  <h2 class="red-text text-lighten-2">Product List</h2>
-  <table class="striped highlight">
-    <thead>
-      <th>Név</th>
-      <th>Ár</th>
-    </thead>
-    <tbody>
-    <tr *ngFor="let p of product">
-      <th>{{p.name}}</th>
-      <td>{{p.price}}</td>
-    </tr>
-    </tbody>
-  </table>
+  <h3>Termékek</h3>
+  <ul class="collection">
+    <app-product *ngFor="let p of product" 
+              [product]="p"
+              (delProducts)="delProducts($event)"
+              (addProducts)="addProducts($event)">
+    </app-product>
+  </ul>
 </div>
 <div *ngIf="!product">
     <div class="preloader-wrapper active">

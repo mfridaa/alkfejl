@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../classes/product';
+import { Orders } from '../../classes/orders';
 import { ProductService } from '../../services/product.service';
 
 @Component({
@@ -10,6 +11,7 @@ import { ProductService } from '../../services/product.service';
 })
 export class ProductListViewComponent implements OnInit {
   private product: Product[];
+  private order: Orders;
 
   constructor(
     private ProductService: ProductService
@@ -24,6 +26,12 @@ export class ProductListViewComponent implements OnInit {
   private delProducts(id: number): void {
     this.ProductService.delProductById(id).subscribe((product) => {
       this.product = product as Product[];
+    });
+  }
+
+  private addProducts(product: Product): void {
+    this.ProductService.addProductsById(product).subscribe((order) => {
+      this.order = order as Orders;
     });
   }
 }
