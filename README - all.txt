@@ -19,7 +19,7 @@ BEJELENKEZVE-USER:
 
 -Termékek menüpont:
 	-Termékre kattintás: termék adatainak megjelenítése
-	-Kosárba helyezés
+	-A megvásárolni kívánt mennyiség kosárba helyezése
 	
 -Rendelések menüpont:
 	-Megrendelt termékek megjelenítése
