@@ -6,7 +6,8 @@ export class Product {
 
     public constructor(
         public id: number, 
-        public name: string, 
+        public name: string,
+        public picture: string, 
         public price: number
     ){}
     

@@ -13,18 +13,21 @@ export class ProductListViewComponent implements OnInit {
   private product: Product[];
   private order: Orders;
   private error: boolean;
+  private add: boolean;
 
   constructor(
     private ProductService: ProductService
   ) { }
 
   ngOnInit() {
+    this.add = false;
     this.ProductService.getProducts().subscribe((product) => {
       this.product = product as Product[];
     });
   }
 
   private delProducts(id: number): void {
+    this.add = false;
     this.ProductService.delProductById(id).subscribe((product) => {
       this.product = product as Product[];
     },(err) => {
@@ -35,8 +38,10 @@ export class ProductListViewComponent implements OnInit {
   }
 
   private addProducts(product: Product): void {
+    this.add = false;
     this.ProductService.addProductsById(product).subscribe((order) => {
       this.order = order as Orders;
     });
+    this.add = true;
   }
 }

@@ -1,13 +1,31 @@
-<a routerLink="/product/{{product.id}}" class="collection-item">
-  <span *ngIf="authService.hasRole('ADMIN') || authService.hasRole('USER')" class="right create" (click)="clickAdd($event)">
-    <i class="material-icons">add_shopping_cart</i>
-  </span>
-  <span *ngIf="authService.hasRole('ADMIN')"
-        class="right delete" (click)="clickDeleteButton($event)">
-    <i class="material-icons red-text">delete</i>
-  </span>
-  <span class="new badge" data-badge-caption="">{{product.price}}</span>
-  <span>
-    {{product.name}}
-  </span>
-</a>
+<table>
+  <a routerLink="/product/{{product.id}}" class="collection-item">
+    <th style="height:24px; width:30%">
+      <span style="font-size:20px; height:24px">
+        <b>{{product.name}}</b>
+      </span>
+    </th>
+  </a>
+    <th style="height:24px; width:20%">
+        <span class="new badge" data-badge-caption="" style="font-size:20px">
+          {{product.price}}Ft
+        </span>
+    </th>
+    <th style="height:24px; width:30%">
+        <div class="input-field col s12">
+            <input #amount type="number" placeholder="Mennyiség">
+        </div>
+    </th>
+    <th style="height:24px; width:10%">
+        <span *ngIf="authService.hasRole('ADMIN') || authService.hasRole('USER')" 
+          class="right create" (click)="clickAdd($event, amount.value)">
+          <i class="material-icons" style="font-size: 2.5rem">add_shopping_cart</i>
+        </span>
+      </th>
+      <th style="height:24px; width:10%">
+      <span *ngIf="authService.hasRole('ADMIN')"
+            class="right delete" (click)="clickDeleteButton($event)">
+        <i class="material-icons red-text" style="font-size: 2.5rem">delete</i>
+      </span>
+      </th>
+</table>

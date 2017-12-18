@@ -36,10 +36,12 @@ export class ProductService {
     this.delProductById(product.id);
   }
 
-  public addProductsById(product: Product): Observable<Orders> {
+  public addProductsById(obj: any): Observable<Orders> {
     var orderDate = new Date().getTime();
-    var amount = 1;
+    var amount = obj.amount;
     var status = false;
+    var product: Product;
+    product = obj.prod;
     return this.http.post(ProductService.orderapi + '/addOrder', {
         amount,
         orderDate,

@@ -15,7 +15,7 @@ export class ProductComponent implements OnInit {
   @Output()
   public delProducts: EventEmitter<number> = new EventEmitter();
   @Output()
-  public addProducts: EventEmitter<Product> = new EventEmitter();
+  public addProducts: EventEmitter<any> = new EventEmitter();
 
   public clickDeleteButton($event: Event): void {
     $event.preventDefault();
@@ -23,10 +23,13 @@ export class ProductComponent implements OnInit {
     this.delProducts.emit(this.product.id);
   }
 
-  public clickAdd($event: Event): void {
+  public clickAdd($event: Event, amount: number): void {
     $event.preventDefault();
     $event.stopPropagation();
-    this.addProducts.emit(this.product);
+    console.log(amount);
+    var prod: Product;
+    prod = this.product;
+    this.addProducts.emit({prod, amount});
   }
 
   constructor(

@@ -13,6 +13,8 @@ import { Router, ActivatedRoute } from '@angular/router';
 export class ProductCategoryViewComponent implements OnInit {
   private product: Product[];
   private order: Orders;
+  private add: boolean;
+  private error: boolean;
 
   constructor(
     private ProductService: ProductService,
@@ -29,6 +31,7 @@ export class ProductCategoryViewComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.add = false;
     let id: number = parseInt(this.route.snapshot.paramMap.get('id'));
     this.ProductService.getProductsByCategory(id).subscribe((product) => {
       this.product = product as Product[];
@@ -36,14 +39,21 @@ export class ProductCategoryViewComponent implements OnInit {
   }
 
   private delProducts(id: number): void {
+    this.add = false;
     this.ProductService.delProductById(id).subscribe((product) => {
       this.product = product as Product[];
+    },(err) => {
+      if (err.status === 500) {
+        this.error = true;
+      }
     });
   }
 
   private addProducts(product: Product): void {
+    this.add = false;
     this.ProductService.addProductsById(product).subscribe((order) => {
       this.order = order as Orders;
     });
+    this.add = true;
   }
 }
