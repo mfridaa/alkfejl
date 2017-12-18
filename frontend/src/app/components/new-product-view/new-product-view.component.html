@@ -7,6 +7,11 @@
         </div>
       </div>
       <div class="row">
+          <div class="input-field col s12">
+            <input #picture type="text" [ngClass]="error ? 'error' : ''" placeholder="Kép url">
+          </div>
+        </div>
+      <div class="row">
         <div class="input-field col s12">
           <input #price type="number" [ngClass]="error ? 'error' : ''" placeholder="Ár">
         </div>
@@ -27,7 +32,7 @@
       <div class="row">
         <div class="col s12 center">
           <input type="button" value="Felvétel" class="btn"
-                 (click)="tryAddProduct(name.value, price.value, category.value)">
+                 (click)="tryAddProduct(name.value, picture.value, price.value, category.value)">
         </div>
       </div>
     </form>

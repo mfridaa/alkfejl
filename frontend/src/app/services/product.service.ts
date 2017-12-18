@@ -54,9 +54,10 @@ export class ProductService {
     this.addProductsById(product);
   }
 
-  public newProduct(name: string, price: number, category: number): Observable<Product> {
+  public newProduct(name: string, picture: string, price: number, category: number): Observable<Product> {
     return this.http.post(ProductService.api + '/newProduct/' + category, {
       name,
+      picture,
       price
     }) as Observable<Product>;
 
