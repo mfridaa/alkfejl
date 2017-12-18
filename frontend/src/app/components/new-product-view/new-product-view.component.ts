@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
   providers: [ProductService]
 })
 export class NewProductViewComponent implements OnInit {
+  private error: boolean;
 
   constructor(
     private productService: ProductService,

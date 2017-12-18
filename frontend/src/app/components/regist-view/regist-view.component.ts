@@ -24,8 +24,9 @@ export class RegistViewComponent implements OnInit {
     this.authService.regist(username, password).subscribe((user) => {
       this.authService.setUser(user as User);
       this.router.navigate(['/login']);
+      this.error = false;
     }, (err) => {
-      if (err.status === 403) {
+      if (err.status === 400) {
         this.error = true;
       }
     });

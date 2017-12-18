@@ -3,23 +3,23 @@
       <h4 class="red-text text-lighten-2">Új termék felvétele</h4>
       <div class="row">
         <div class="input-field col s12">
-          <input #name type="text" [ngClass]="error ? 'error' : ''" placeholder="Termék név">
+          <input #name type="text" ng-model="required" [ngClass]="error ? 'error' : ''" placeholder="Termék név">
         </div>
       </div>
       <div class="row">
           <div class="input-field col s12">
-            <input #picture type="text" [ngClass]="error ? 'error' : ''" placeholder="Kép url">
+            <input #picture type="text" ng-model="required" [ngClass]="error ? 'error' : ''" placeholder="Kép url">
           </div>
         </div>
       <div class="row">
         <div class="input-field col s12">
-          <input #price type="number" [ngClass]="error ? 'error' : ''" placeholder="Ár">
+          <input #price type="number" ng-model="required" [ngClass]="error ? 'error' : ''" placeholder="Ár">
         </div>
       </div>
       <div class="row">
           <div class="col s12">
               <label style="font-size:16px">Termék kategória</label>
-              <select #category class="browser-default">
+              <select #category class="browser-default" ng-model="required">
                 <option value="" disabled selected>Válassz!</option>
                 <option value="0">Art</option>
                 <option value="1">Otthon</option>
