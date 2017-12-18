@@ -14,6 +14,7 @@ export class ProductListViewComponent implements OnInit {
   private order: Orders;
   private error: boolean;
   private add: boolean;
+  private delete: boolean;
 
   constructor(
     private ProductService: ProductService
@@ -30,9 +31,14 @@ export class ProductListViewComponent implements OnInit {
     this.add = false;
     this.ProductService.delProductById(id).subscribe((product) => {
       this.product = product as Product[];
+      this.delete = true;
     },(err) => {
       if (err.status === 500) {
         this.error = true;
+        this.delete = false;
+      }else{
+        this.error = false;
+        this.delete = true;
       }
     });
   }
@@ -43,5 +49,7 @@ export class ProductListViewComponent implements OnInit {
       this.order = order as Orders;
     });
     this.add = true;
+    this.error = false;
+    this.delete = false;
   }
 }

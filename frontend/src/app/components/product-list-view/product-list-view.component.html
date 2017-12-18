@@ -23,7 +23,10 @@
   <span *ngIf="error" class="new badge red" data-badge-caption="" style="font-size: 24px">
     A termék szerepel rendelésben, nem törölhető!
   </span>
-  <span *ngIf="add" class="new badge red" data-badge-caption="" style="font-size: 24px">
+  <span *ngIf="delete" class="new badge blue" data-badge-caption="" style="font-size: 24px">
+      A termék törlése sikeres volt!
+    </span>
+  <span *ngIf="add" class="new badge blue" data-badge-caption="" style="font-size: 24px">
       A termék kosárhoz adása sikeres volt!
   </span>
 </div>
