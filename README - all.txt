@@ -77,12 +77,20 @@ Tesztelés:
 Az alkalmazás megfelelő tesztelése érdekében E2E tesztek íródtak. Ezekből pár eredménye az alábbi képen is megtekinhető:
 https://github.com/mfridaa/alkfejl/blob/master/tests.PNG
 
+Tesztesetek:
+-login sikeres
+-login sikertelen
+-regisztráció
+-termékek kilistázása
+-egy termék id szerint
+-rendelések kilistázása
+-egy rendelés id szerint
 
 
 Felhasználói dokumentáció:
 --------------------------
 -Az alábbi alkalmazás egy webshopot valósít meg, melyben kedvére válogathat a felhasználó
-a különböző kategóriákba tartozó termékek közül.
+a különböző kategóriákba tartozó termékek közül. Miután a szerver és a kliens egyaránt el lett indítva, program a http://localhost:4200/ címen érhető el.
 
 -Első képésként, ha még nem történt regisztráció, ezt a Regisztráció gombra kattintva van lehetőség megtenni.
 Itt meg kell adni eg felhasználónevet és egy jeszót, majd megnyomni a regisztráció gombot,
