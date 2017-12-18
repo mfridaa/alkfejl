@@ -8,11 +8,11 @@
 - ```Szűrési lehetőség:``` kategóriánkénti megtekintés
 
 ### Bejelentkezés menüpont:
-- ``` Bejelentkezés ADMIN``` felhasználólént
-- ``` Bejelentkezés USER``` felhasználóként
+- ``` Bejelentkezés ADMIN``` felhasználólént (minden mező kitöltése kötelező)
+- ``` Bejelentkezés USER``` felhasználóként (minden mező kitöltése kötelező)
 
 ### Regisztráció menüpont:
-- ``` Regisztrációs lehetőség ``` -> USER felhasználóként
+- ``` Regisztrációs lehetőség ``` -> USER felhasználóként (minden mező kitöltése kötelező)
 	
 	
 ### BEJELENKEZVE-USER:
